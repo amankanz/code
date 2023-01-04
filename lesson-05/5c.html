@@ -4,17 +4,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Todo App</title>
+  <title>Document</title>
 </head>
 <body>
-  <button>Press me</button>
   <script>
-    let todo1 = 'Get grocersies';
-    let todo2 = 'Wash car';
-    let todo3 = 'Make dinner';
+    document.title = 'Amani\'s Todo App'
+
+    let todo1 = 'Get groceries'
+    let todo2 = 'Wash car'
+    let todo3 = 'Make dinner'
 
     let element = document.createElement('div');
-    element.innerText = todo1;
+    element.innerText = todo3;
     document.body.appendChild(element);
 
     element = document.createElement('div');
@@ -22,7 +23,7 @@
     document.body.appendChild(element);
 
     element = document.createElement('div');
-    element.innerText = todo3;  
+    element.innerText = todo1;
     document.body.appendChild(element);
   </script>
 </body>
