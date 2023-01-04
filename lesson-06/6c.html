@@ -12,18 +12,14 @@
     //inches to centimeters.
 
     /*
-      formula: 1 cm = in / 0.39370
+      formula: multiply length value by 2.54
     */
 
-    let a = 'length';
-    let b = 0.39370;
-
-    function lengthCoverter(length) {
-      let result = length / b;
-      console.log(result);
+    function inchToCm(length) {
+      console.log(length * 2.54);
     }
 
-    lengthCoverter(10);
+    inchToCm(10);
 
     
    
