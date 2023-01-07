@@ -7,43 +7,44 @@
   <title>Execises 9</title>
 </head>
 <body>
-  <input type="text" placeholder="Enter Length" id="textbox">
+  <input type="text" placeholder="Enter Length" id="measurement">
   <button onclick="cmToInch()">Convert to inch</button>
   <button onclick="inchToCm()">COnvert to cm</button>
 
   <div id="result"></div>
 
   <script>
-    
+    const measurement = document.getElementById('measurement');
+
+    const resultsection = document.getElementById('result');
 
     function cmToInch() {
-      //Reset result
+      //Reset list
       document.getElementById('result').innerHTML = '';
-      const textbox = document.getElementById('textbox');
-      const length = textbox.value;
+      
+      const value = measurement.value;
 
-      let div = document.createElement('div');
-      div.innerText = length / 2.54;
+      //Value is a string and can't be convert
+      //To convert it we multiply it first.
+      const convertedValue = +value * 2.54;
 
-      //Rendering inside the div id: result
-      let lenghtResult = document.getElementById('result');
-      lenghtResult.appendChild(div);
+      const result = document.createElement('div');
+      result.innerText = convertedValue;
+
+      resultsection.appendChild(result);
     }
 
     function inchToCm() {
-      //Reset result
+      // Reset list
       document.getElementById('result').innerHTML = '';
 
-      const textbox = document.getElementById('textbox');
-      const length = textbox.value;
+      const value = measurement.value;
+      const convertedValue = +value / 2.54;
 
-      let div = document.createElement('div');
-      div.innerText = length * 2.54;
-
-
-      //Rendering inside the div id: result
-      let lenghtResult = document.getElementById('result');
-      lenghtResult.appendChild(div);
+      const result = document.createElement('div');
+      result.innerText = convertedValue;
+      
+      resultsection.appendChild(result);
     }
 
   </script>
