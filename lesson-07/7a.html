@@ -4,23 +4,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercises 6</title>
+  <title>Exercises 7</title>
 </head>
 <body>
   <script>
-    //This program convert length from
-    //inches to centimeters.
+ 
+    function toUpper(stringArr) {
+      let result = [];
 
-    /*
-      formula: multiply length value by 2.54
-    */
+      stringArr.forEach(function (str) {
+        result.push(str.toUpperCase());
 
-    function inchToCm(length) {
-      console.log(length * 2.54);
+      });
+
+      console.log(result);
     }
+    
+  toUpper('amani', 'zihalirwa');
 
-    inchToCm(10);
-   
   </script>
 </body>
 </html>
