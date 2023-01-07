@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Execises 9</title>
+</head>
+<body>
+  <div id="cart"></div>
+  
+  <button onclick="whenClickApple()">Apple</button>
+  <button onclick="whenClickTomato()">Tomato</button>
+  <button onclick="whenClickEggs()">Eggs</button>
+  <button onclick="whenClickClear()">Clear</button>
+
+  <script>
+    //Apple button
+    function whenClickApple() {
+      let div = document.createElement('div');
+      div.innerText = 'Apple';
+
+      //Rendering section 
+      let selectedItems = document.getElementById('cart');
+      selectedItems.appendChild(div);
+
+    }
+
+    //Tomato button
+    function whenClickTomato() {
+      let div = document.createElement('div');
+      div.innerText = 'Tomato'
+
+      //Rendering section
+      let selectedItems = document.getElementById('cart');
+      selectedItems.appendChild(div);
+    }
+
+    function whenClickEggs() {
+      let div = document.createElement('div');
+      div.innerText = 'Eggs';
+
+      //Rendering section
+      let selectedItems = document.getElementById('cart');
+      selectedItems.appendChild(div);
+    }
+
+
+    //Remove items from the cart
+    function whenClickClear() {
+      document.getElementById('cart').innerHTML = '';
+    }
+  </script>
+</body>
+</html>

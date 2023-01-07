@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Execises 9</title>
+</head>
+<body>
+  <input type="text" placeholder="Enter Length" id="textbox">
+  <button onclick="cmToInch()">Convert to inch</button>
+  <button onclick="inchToCm()">COnvert to cm</button>
+
+  <div id="result"></div>
+
+  <script>
+    
+
+    function cmToInch() {
+      //Reset result
+      document.getElementById('result').innerHTML = '';
+      const textbox = document.getElementById('textbox');
+      const length = textbox.value;
+
+      let div = document.createElement('div');
+      div.innerText = length / 2.54;
+
+      //Rendering inside the div id: result
+      let lenghtResult = document.getElementById('result');
+      lenghtResult.appendChild(div);
+    }
+
+    function inchToCm() {
+      //Reset result
+      document.getElementById('result').innerHTML = '';
+
+      const textbox = document.getElementById('textbox');
+      const length = textbox.value;
+
+      let div = document.createElement('div');
+      div.innerText = length * 2.54;
+
+
+      //Rendering inside the div id: result
+      let lenghtResult = document.getElementById('result');
+      lenghtResult.appendChild(div);
+    }
+
+  </script>
+  
+</body>
+</html>
