@@ -26,11 +26,27 @@
       quantity: 12
     }];
 
-    function cartTotal() {
-      console.log(cartArray);
-    };
+    function cartTotal(cartArray) {
+      let total = 0;
 
-    cartTotal();
+      cartArray.forEach(function (item) {
+        total = total + item.price * item.quantity;
+      });
+
+      console.log(total);
+    };
+    
+    cartTotal([
+    {
+      name: 'Apple',
+      price: 4,
+      quantity: 2,
+    }, {
+      name: 'Orange',
+      price: 3,
+      quantity: 3
+    }
+    ]);
   </script>
 </body>
 </html>
