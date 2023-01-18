@@ -8,33 +8,38 @@
 </head>
 <body>
   <script>
-    const id = new Date().getTime;
+    let total = 0;
 
-    function totalPrice(event) {
-      
-      const addButton = event.target;
-      const idAddButton = addButton.id;
-      let total = 0;
-    }
+    function createCart(foodPrices) {
+      const foods = object.keys(foodPrices);
 
-    function createCart(cartArray) {
+      foods.forEach(function (food) {
+        const cartItem = document.createElement('div');
+        
+        //Here we get the food price using the food variable.
+        //If food = 'Apple', then foodPrices[food] is the same
+        //as foodPrices['Apple'], which is the same as foodPrices.Apple
+        const foodPrices = foodPrices[food];
+        cartItem.innerText = food + ' $' + foodPrices;
 
-      cartArray.forEach(function (item) {
-      const receiptLine = document.createElement('div');
-      receiptLine.innerText = item.name + ' ' + '$' + item.price;
-      document.body.appendChild(receiptLine);
+        const addButton = document.createElement('button');
+        addButton.innerText = 'Add';
 
-      const addButton = document.createElement('button');
-      addButton.innerText = 'Add';
-      addButton.style = 'margin-left: 12px';
-      addButton.onclick = totalPrice;
-      addButton.id = new Date().getTime;
-      receiptLine.appendChild(addButton);
+        addButton.onclick = function () {
+          total = total + foodPrices;
+        };
+
+        cartItem.appendChild(addButton);
+
+        //This will render each food with an "Add" button onto the webpage.
+        document.body.appendChild(cartItem);
       });
-
     }
 
-    createCart([{name: 'Apple', price: 3}, {name: 'Orange', price: 4}, {name: 'Egg', price: 2}]);
+    createCart({ Apple: 3, Orange: 4, Egg: 2 });
+
+
+
 
   
   </script>
